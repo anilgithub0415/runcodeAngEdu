@@ -7,7 +7,7 @@ const app = express();
 // Serve static files from the dist directory
 //app.use(express.static(path.join(__dirname, 'dist', 'my-eshop')));
 //app.use(express.static('./dist/my-eshop'));
-app.use(express.static(path.join(__dirname, 'my-eshop')));
+app.use(express.static(path.join(__dirname)));
 
 app.get('*.js', (req, res, next) => {
     req.url = req.url + '.gz';
@@ -25,7 +25,7 @@ app.get('*.js', (req, res, next) => {
 
 
 //Option 1
-/**/ app.use(express.static(path.join(__dirname, 'dist', 'my-eshop')
+/**/ app.use(express.static(path.join(__dirname, 'dist')
 , {
     setHeaders: (res, path, stat) => {
         if (path.endsWith('.js')) {
@@ -116,7 +116,7 @@ app.get('*', (req, res) => {
 // Start the server on port 8081
 const port = process.env.PORT || 4200;
 app.listen(port, () => {
-    console.log('finding index.html at:'+path.join('dist', 'my-eshop', 'index.html'))
+    console.log('finding index.html at:'+path.join('dist','index.html'))
   console.log(`Server started on port ${port} and __dirname:${__dirname}`);
 });
 /* const express = require('express');
