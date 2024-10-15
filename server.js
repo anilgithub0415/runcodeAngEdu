@@ -110,7 +110,7 @@ app.get('*', (req, res) => {
 
  res.setHeader('Content-Type', 'text/html');
  //res.sendFile(path.join(__dirname, 'my-eshop', 'index.html'));
- res.sendFile(path.join(__dirname, 'index.html'));
+ res.sendFile(path.join(__dirname,'/src/', 'index.html'));
 });
 
 // Start the server on port 8081
